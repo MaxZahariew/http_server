@@ -4,8 +4,8 @@ from starlette.responses import JSONResponse
 from api.errors import UserNotFoundError
 from api.routers.friends import FriendsRouter
 from api.routers.users import UsersRouter
-from api.storage.friends import FriendsStorage
-from api.storage.users import UsersStorage
+from api.storage.friends import FriendStorage
+from api.storage.users import UserStorage
 
 
 class App(FastAPI):
@@ -19,8 +19,8 @@ class App(FastAPI):
         return JSONResponse(str(exc), status_code=404)
 
 
-user_storage = UsersStorage()
+user_storage = UserStorage()
 users_router = UsersRouter(user_storage=user_storage)
-friends_storage = FriendsStorage()
+friends_storage = FriendStorage()
 friends_router = FriendsRouter(friends_storage=friends_storage)
 app = App(users_router=users_router, friends_router=friends_router)

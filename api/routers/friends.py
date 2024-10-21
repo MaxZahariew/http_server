@@ -4,7 +4,7 @@ from api.storage.friends import FriendStorage
 
 
 class FriendsRouter(APIRouter):
-    def __init__(self, friends_storage: FriendStorage)
+    def __init__(self, friends_storage: FriendStorage):
         super().__init__()
         self.tags = ['friends']
 
