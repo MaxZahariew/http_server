@@ -1,0 +1,6 @@
+DEBUG: [2024-10-26 10:46:33,999] p27268 {C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\asyncio\proactor_events.py:630} - Using proactor: IocpProactor
+INFO: [2024-10-26 10:46:33,999] p27268 {c:\Users\Maxim\OneDrive\Документы\Project IT python\FasAPI_project\capibara\.env\lib\site-packages\httpx\_client.py:1038} - HTTP Request: POST http://testserver/friends/0/add1 "HTTP/1.1 404 Not Found"
+DEBUG: [2024-10-26 10:46:34,166] p27268 {C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\asyncio\proactor_events.py:630} - Using proactor: IocpProactor
+INFO: [2024-10-26 10:46:34,169] p27268 {c:\Users\Maxim\OneDrive\Документы\Project IT python\FasAPI_project\capibara\.env\lib\site-packages\httpx\_client.py:1038} - HTTP Request: POST http://testserver/friends/42/add21 "HTTP/1.1 404 Not Found"
+DEBUG: [2024-10-26 10:46:34,187] p27268 {C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\asyncio\proactor_events.py:630} - Using proactor: IocpProactor
+INFO: [2024-10-26 10:46:34,191] p27268 {c:\Users\Maxim\OneDrive\Документы\Project IT python\FasAPI_project\capibara\.env\lib\site-packages\httpx\_client.py:1038} - HTTP Request: POST http://testserver/friends/0/add0 "HTTP/1.1 404 Not Found"

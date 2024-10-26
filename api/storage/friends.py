@@ -11,3 +11,6 @@ class FriendStorage:
             raise Exception(f"Friendship {relation} already exists")
         self.__friends.add(relation)
         return self.__friends
+
+    def get_friends(self) -> set[tuple[int, int]]:
+        return self.__friends

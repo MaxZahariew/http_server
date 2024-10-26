@@ -1,3 +1,4 @@
+import logging
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
 
@@ -6,6 +7,13 @@ from api.routers.friends import FriendsRouter
 from api.routers.users import UsersRouter
 from api.storage.friends import FriendStorage
 from api.storage.users import UserStorage
+
+
+logging.basicConfig(
+    filename='log_app.log',
+    level=logging.DEBUG,
+    format="%(levelname)s: [%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} - %(message)s",
+)
 
 
 class App(FastAPI):
