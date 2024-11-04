@@ -7,11 +7,17 @@ from api.models.api.user import User
 from api.models.db.user import User as DBUser
 from api.storage.users import UserStorage
 
+from dataclasses import asdict
+
 
 @pytest.fixture()
 def new_user() -> NewUser:
     return NewUser(
-        name="Imax", age=38, email="Imax@mail.ru", about="It,s me", password="rs485"
+        name="Imax",
+        age=38,
+        email="Imax@mail.ru",
+        about="It,s me",
+        password="rs485"
     )
 
 
@@ -48,9 +54,9 @@ class TestUserAPI:
     def test_create_user(
         self, client: TestClient, test_user: User, new_user: NewUser, db_user: DBUser
     ):
-        expected_user = db_user
-        res = client.post("/users", json=new_user.model_dump())
+        expected_user = asdict(db_user)
+        res = client.post("/users/", json=new_user.model_dump())
+        print(res)
 
         assert res.status_code == HTTPStatus.OK
-        assert res.json() == expected_user
-        
+        assert res.json() == expected_user['id']
