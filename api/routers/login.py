@@ -28,8 +28,8 @@ class LoginRouter(APIRouter):
         @self.post("/login/")
         async def login(login_request: LoginRequest, response: Response):
             user = user_storage.find_user(login_request.email)
-            print(f"Entered Password: {login_request.password}")
-            print(f"Stored Hashed Password: {user.password}")
+            print(f"Entered Password: {login_request.password.encode()}")
+            print(f"Stored Hashed Password: {user.password.encode()}")
             if bcrypt.checkpw(login_request.password.encode(),
                               user.password.encode()):
                 response.set_cookie(
