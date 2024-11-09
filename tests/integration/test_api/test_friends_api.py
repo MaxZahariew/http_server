@@ -22,7 +22,7 @@ class TestFriendApi:
         friend_id: int,
         friends_storage: FriendStorage,
     ):
-        res = client.post(f"/friends/{user_id}/add{friend_id}")
+        res = client.post(f"/friends/{user_id}/add/{friend_id}")
 
         assert res.status_code == HTTPStatus.OK
         assert friends_storage.get_friends() == {(user_id, friend_id)}

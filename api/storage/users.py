@@ -32,3 +32,10 @@ class UserStorage:
 
         self.__users[id_] = new_user
         return new_user
+
+    def find_user(self, email: str) -> User:
+        for id, user in self.__users.items():
+            if user.email == email:
+                return user
+            else:
+                return UserNotFoundError
